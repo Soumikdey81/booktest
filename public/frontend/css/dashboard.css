@@ -1,0 +1,158 @@
+:root {
+    --dark_brown : #7e6752;
+    --light_brown : #a8896c;
+    --sage_green : #597e52;
+    --meddium_green : #61b292;
+    --light_yellow_green : #aed09e;
+    --dark_occur_yelllow : #c6a969;
+    --light_occur_yellow : #f4eec0;
+    --dark_lemon_yellow : #f1e8a7;
+    --light_tan : #ffffec;
+    --dark_lemon : #ffdb00;
+    --lemon_green : #9bec00;
+  }
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', 'Segoe UI', arial;
+  }
+.navbar{
+    background-color: var(--dark_occur_yelllow);
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: max-content repeat(1, 1fr);
+    grid-template-rows: repeat(1, 100vh);
+}
+.grid-item-1{
+    background-color: #f0f0f0;
+    grid-column: 1/2;
+}
+.grid-item-2{
+    grid-column: 2/3;
+}
+.navbar-brand{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+.sidebar {
+    border-right: 1px solid #ddd;
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: max-content;
+}
+#column-sidebar{
+    padding: 0;
+}
+.sidebar ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-top: 1rem;
+}
+
+.sidebar a{
+    color: #337ab7;
+    text-decoration: none;
+    text-align: center;
+}
+.sidebar button{
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #337ab7;
+    border: none;
+}
+
+.dashboard{
+    padding: 1rem;
+}
+
+.avatar{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    float: right;
+    margin-top: -5px; 
+}
+.close-btn {
+    display: none;
+}
+
+.sidebar li:hover{
+    background-color: #337ab7;
+    
+}
+
+.sidebar a:hover{
+    color: #f0f0f0;
+}
+
+.sidebar button:hover{
+    background-color: #337ab7;
+    color: #f0f0f0;
+}
+
+@media (min-width: 768px) {
+   .navbar-toggler {
+       display: none;
+    }
+}    
+/* Add this to make the sidebar collapse on small screens*/
+@media (max-width: 768px) {
+   .sidebar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-right: 1px solid #ddd;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+   .sidebar.show{
+        transform: translateX(0);
+    }
+
+   .sidebar ul{
+        flex-direction: column;
+        padding-top: 1rem;
+    }
+
+   .sidebar li{
+        margin-bottom: 0.2rem;
+    }
+
+   .sidebar a{
+        font-size: 18px;
+    }
+
+   .close-btn{
+        display: none;
+    }
+
+   .sidebar.show .close-btn {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .navbar-brand{
+        margin: 0 auto;
+    }
+}
+
+.navbar-brand{
+    text-align: center;
+}
+
+.avatar{
+    float: right;
+}
