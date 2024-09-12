@@ -29,7 +29,7 @@
         "pestphp/pest-plugin-laravel": "^3.0"
     },
     "autoload": {
-        "autoload": [
+        "files": [
             "app/Helper/helpers.php"
         ],
         "psr-4": {
